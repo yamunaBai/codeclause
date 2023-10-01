@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetic Retinopathy Detection</title>
+<style>
+   body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    
+    .container {
+        text-align: center;
+        width: 300px;
+    }
+    
+    #file-input {
+        margin-bottom: 20px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Diabetic Retinopathy Detection</h1>
+        <input type="file" id="file-input" accept="image/*">
+        <button onclick="detect()">Detect</button>
+        <div id="result"></div>
+    </div>
+<script>
+    function detect() {
+        var fileInput = document.getElementById('file-input');
+        var file = fileInput.files[0];
+    
+        if (file) {
+            // Simulate diabetic retinopathy detection (replace this with your actual detection logic)
+            var probability = Math.random(); // Simulated detection probability between 0 and 1
+    
+            var resultElement = document.getElementById('result');
+            if (probability > 0.5) {
+                resultElement.innerText = 'Likelihood of Diabetic Retinopathy: High';
+            } else {
+                resultElement.innerText = 'Likelihood of Diabetic Retinopathy: Low';
+            }
+        } else {
+            alert('Please select an image first.');
+        }
+    }
+    </script>
+</body>
+</html>
